@@ -1,0 +1,121 @@
+/* Resetting default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Body Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #1e2a38;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Ensures logo and name stay to the left */
+}
+
+.navbar-brand img {
+  margin-right: 10px; /* Space between logo and name */
+}
+
+.navbar-nav {
+  margin-left: auto; /* Pushes the nav items to the right */
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8); /* Adjust link color */
+  margin-left: 15px; /* Space between nav items */
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff; /* Color on hover */
+}
+
+.navbar-toggler {
+  border: none; /* Remove default border */
+}
+
+/* Hero Section Styles */
+
+.hero-content h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.get-started-btn {
+  background-color: #ff7f50;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.get-started-btn:hover {
+  background-color: #ff5722;
+}
+
+
+
+/* Footer Styles */
+.footer {
+  background-color: #1e2a38;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #ff7f50;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .chat-box {
+      padding: 20px;
+  }
+
+  .chat-box h2 {
+      font-size: 20px;
+  }
+
+  .summary-section h3 {
+      font-size: 18px;
+  }
+}

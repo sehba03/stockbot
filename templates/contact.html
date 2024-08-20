@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - StockBot</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <style>
+        /* Flexbox layout for sticky footer */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #000000; /* Navbar background color */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ff7f50; /* Default color for navbar items */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff7f50; /* Blue color for navbar items on hover */
+            text-decoration: underline; /* Remove underline on hover */
+        }
+
+        .btn-primary:hover {
+            color: Black;
+            background-color: Orange; /* Darker shade for button hover */
+            border-color: Orange; /* Darker border shade for button hover */
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 15px; /* Space between navbar items */
+        }
+
+        .navbar-nav .nav-item:last-child {
+            margin-right: 5px; /* Remove margin from the last item */
+        }
+
+        .btn-primary-gs {
+            background-color: blue; /* Button color */
+            border-color: blue; /* Button border color */
+            color: white;
+            margin-left: 10px;
+        }
+
+        .btn-primary-gs:hover {
+            color: Black;
+            background-color: Orange; /* Darker shade for button hover */
+            border-color: Orange; /* Darker border shade for button hover */
+        }
+
+        .btn-primary {
+            background-color: primary; /* Button color */
+            border-color: primary; /* Button border color */
+        }
+
+        .footer {
+            flex-shrink: 0;
+        }
+
+        .contact-info, .contact-form {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #000;
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            margin: 0 20px;
+        }
+
+        .separator h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #000;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            align-items: stretch;
+        }
+
+        .contact-form, .contact-info {
+            flex: 1;
+        }
+        .container-contact{
+            flex: 1;
+        }
+
+        .contact-form {
+            margin-right: 20px; /* Space between form and separator */
+            background-color: #f4f4f4;
+        }
+
+        .contact-info {
+            margin-left: 20px; /* Space between info and separator */
+            background-color: #f4f4f4;
+        }
+
+        .contact-heading {
+            text-align: center;
+            margin-bottom: 50px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-dark">
+   <!-- Navbar -->
+<header class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container d-flex justify-content-between align-items-center">
+        <!-- Brand Section -->
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="static/images/stockbot-icon.png" width="30" height="30" class="me-2" alt="StockBot Logo">
+            <h1 class="h3 mb-0">StockBot</h1>
+        </a>
+        
+        <!-- Navigation for larger screens -->
+        <div class="d-none d-lg-block">
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li> </li>
+                <li class="nav-item">
+                    <a href="email_page.html" class="btn btn-primary-gs">Get Started</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+
+
+        <!-- Contact Form Section -->
+        <section class="container-contact py-5">
+            <div class="container">
+                <div class="contact-heading" >
+                    <h2 class="display-5">Contact Us</h2>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-form">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" >Submit</button>
+                        </form>
+                    </div>
+                    <div class="separator">
+                        <h1>OR</h1>
+                    </div>
+                    <div class="contact-info">
+                        
+                        <h3>Contact Information</h3>
+                        <p><strong>Email:</strong> support@stockbot.com</p>
+                        <p><strong>Address:</strong> 1234 Market St, Suite 100, San Francisco, CA 94103</p>
+                        <p><strong>Phone:</strong> (123) 456-7890</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- Footer -->
+    <footer class="footer bg-black text-center text-light py-4">
+        <div class="container">
+            <p>&copy; 2024 StockBot. All rights reserved.</p>
+            <p><a href="contact.html" class="text-decoration-none text-light">Contact Us</a> </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

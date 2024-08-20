@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Page - StockBot</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/styles.css">
+    <style>
+        html, body {
+            height: 100%; /* Full height for html and body */
+            margin: 0; /* Remove default margins */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #f9fafb; /* Light gray background */
+        }
+
+        .content {
+            flex: 1; /* Allows the content area to expand */
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 100px;
+        }
+
+        .navbar, .footer {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .navbar {
+            padding: 15px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            margin-right: 10px; /* Space between logo and name */
+        }
+
+        .navbar-nav {
+            margin-left: auto; /* Pushes the nav items to the right */
+        }
+
+        .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.8); /* Adjust link color */
+            margin-left: 15px; /* Space between nav items */
+        }
+
+        .summary-section {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1300px;
+            margin: 10px auto;
+            position: relative; /* For positioning elements if needed */
+        }
+
+        .summary-section h3 {
+            font-size: 27px;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .summary-section textarea {
+            width: 100%;
+            height: 380px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+            resize: none;
+            overflow: auto;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 1315px;
+            width: 100%;
+            margin: 10px auto;
+        }
+
+        .chat-box h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .chat-box form {
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-box input[type="text"] {
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            flex: 1;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-box input[type="text"]:focus {
+            outline: none;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-box button {
+            background-color: primary;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        .chat-box button:hover {
+            background-color: Orange;
+            color: black;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #000000; /* Navbar background color */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ff7f50; /* Default color for navbar items */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff7f50; /* Blue color for navbar items on hover */
+            text-decoration: underline; /* Remove underline on hover */
+        }
+
+        .btn-primary:hover {
+            color: Black;
+            background-color: #ff7f50; /* Darker shade for button hover */
+            border-color: #ff7f50; /* Darker border shade for button hover */
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 15px; /* Space between navbar items */
+        }
+
+        .navbar-nav .nav-item:last-child {
+            margin-right: 5; /* Remove margin from the last item */
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #000000; /* Footer background color */
+            color: #ffffff; /* Footer text color */
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer a {
+            color: #ff7f50; /* Orange color for the link */
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        @media (max-width: 768px) {
+            .chat-box {
+                padding: 20px;
+            }
+
+            .chat-box h2 {
+                font-size: 20px;
+            }
+
+            .summary-section h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="static/images/stockbot-icon.png" width="30" height="30" class="me-2">
+                <h1 class="h3 mb-0">StockBot</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Main Content Wrapper -->
+    <div class="content">
+        <!-- Summary Section -->
+        <div class="summary-section" id="summarySection">
+            <h3>Summary:</h3>
+            <textarea id="summaryText" readonly>{{ summary if summary else "Your summary will appear here... " }}</textarea>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="container">
+            <div class="chat-box">
+                <h3>Paste your URL here:</h3>
+                <form id="urlForm" method="post" action="{{ url_for('url_page') }}">
+                    <input type="text" id="url" name="url" placeholder="Enter website URL" required>
+                    <button class="btn btn-primary" type="submit">Generate Summary</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4">
+        <div class="container">
+            <p>&copy; 2024 StockBot. All rights reserved.</p>
+            <p><a href="contact.html" class="text-decoration">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>
