@@ -40,14 +40,16 @@ Follow these instructions to set up and run the Stockbot project locally.
 
 ### Activate the Virtual Environment
 
-Activate the virtual environment:
+- Activate the virtual environment:
 
-On macOS/Linux:
+- On macOS/Linux:
+
     ```bash
     source venv/bin/activate
 
 
-On Windows:
+-  On Windows:
+
     ```bash
     venv\Scripts\activate
 
